@@ -23,10 +23,9 @@ label2.grid(row=1, column=0, columnspan=2, pady=(0, 10))
 # Fonction appelée au clic du bouton
 def on_button_click():
     name = entry.get()
-    if name.strip():
-        label2.config(text=f"Bonjour, {name} !", fg="green")
-    else:
-        label2.config(text="Veuillez entrer un nom.", fg="red")
+
+    label2.config(text=f"Bonjour, {name} !", fg="green")
+
 
 # Bouton
 button = tk.Button(root, text="Valider", font=("Helvetica", 12), command=on_button_click)
