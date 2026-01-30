@@ -26,16 +26,30 @@ entry.grid(row=1, column=1, padx=10, pady=10)
 ###############################
 fenetre2 = tk.Frame (root , bg = "red" , width = 320 , height = 240 )
 fenetre2.grid(row=1, column=0,columnspan=3, padx=20, pady=20, sticky="nsew")
-
+# Label
+titre2 = tk.Label(fenetre2, text="Message chiffré", font=("Helvetica", 12), bg="#f8f8f8")
+titre2.grid(row=0, column=1, padx=10, pady=10, sticky="n")
 # Label 2 (affichage ou message)
-label2 = tk.Label(fenetre2, text="Entrez votre nom puis cliquez :", font=("Helvetica", 10), bg="#f8f8f8", fg="#555")
-label2.grid(row=1, column=0, columnspan=2, pady=(0, 10))
+label2 = tk.Label(fenetre2, text="Message :", font=("Helvetica", 10), bg="#f8f8f8", fg="#555")
+label2.grid(row=1, column=0, pady=(0, 10))
+# Entry
+entr2 = tk.Entry(fenetre2, font=("Helvetica", 12), width=25)
+entr2.grid(row=1, column=1, padx=10, pady=10)
+
+
+###############################
+#        Fonctions            #
+###############################
+
 
 # Fonction appelée au clic du bouton
 def on_button_click():
     name = entry.get()
     label2.config(text=f"Bonjour, {name} !", fg="green")
 
+###############################
+#           Action            #
+###############################
 # Bouton
 button = tk.Button(root, text="Valider", font=("Helvetica", 12), command=on_button_click)
 button.grid(row=2, column=0, columnspan=2, pady=10)
